@@ -51,12 +51,13 @@ function removeExtraSpaces(string) {
   const trimmedString = string.trim()
   const words = trimmedString.split(" ")
   // console.log(words)
-  let retArray = words.map(word => {
-    let trimmedWord = word.trim()
-    if (trimmedWord != "") {
-      return trimmedWord
-    }
-  })
+  // let retArray = words.map(word => {
+  //   let trimmedWord = word.trim()
+  //   if (trimmedWord != "") {
+  //     return trimmedWord
+  //   }
+  // })
+  let retArray = words.filter(word => word != "")
   return retArray.join(" ")
   // console.log(trimmedString)
 }
