@@ -64,20 +64,21 @@ function removeExtraSpaces(string) {
 
 function kabobCase(string) {
   let lowerString = allLower(string)
-  // Todo: remove extra spaces
+  lowerString = removeExtraSpaces(lowerString)
   const retArray = lowerString.split(" ")
   return retArray.join("-")
 }
 
 function snakeCase(string) {
   let lowerString = allLower(string)
-  // TODO: remove extra spaces
+  lowerString = removeExtraSpaces(lowerString)
   const retArray = lowerString.split(" ")
   return retArray.join("_")
 }
 
 function camelCase(string) {
-  const splitArray = string.split(" ")
+  let trimmedString = removeExtraSpaces(string)
+  const splitArray = trimmedString.split(" ")
   // TODO: remove extra spaces
   let retArray = splitArray.map(word => {
     if (word == splitArray[0]) {
@@ -91,21 +92,21 @@ function camelCase(string) {
 
 // TODO: urlEncoding
 
-console.log("capitalize():")
+console.log("capitalize(hello world):")
 console.log(capitalize("hello world"))
-console.log("reverseCapitalize():")
+console.log("reverseCapitalize(hello world):")
 console.log(reverseCapitalize("hello world"))
-console.log("allCaps():")
+console.log("allCaps(hello world):")
 console.log(allCaps("hello world"))
-console.log("allLower():")
+console.log("allLower(HELLO WORLD):")
 console.log(allLower("HELLO WORLD"))
-console.log("capitalizeWords():")
+console.log("capitalizeWords(hello world):")
 console.log(capitalizeWords("hello world"))
-console.log("removeExtraSpaces():")
+console.log("removeExtraSpaces(  Hello  World  ):")
 console.log(removeExtraSpaces("  Hello  World  "))
-console.log("kabobCase():")
-console.log(kabobCase("Hello Word"))
-console.log("snakeCase():")
-console.log(snakeCase("Hello World"))
-console.log("camelCase():")
-console.log(camelCase("Hello World"))
+console.log("kabobCase(Hello  Word ):")
+console.log(kabobCase("Hello  Word "))
+console.log("snakeCase(Hello  Word ):")
+console.log(snakeCase("Hello  Word "))
+console.log("camelCase(Hello     World ):")
+console.log(camelCase("Hello     World "))
