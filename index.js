@@ -4,7 +4,9 @@ to assist with string manipulation.
 
 Available methods:
 capitalize() - makes the first character of a given string uppercase
+reverseCapitalize() - makes the first character of a given string lowercase, makes all other letters uppcase
 allCaps() - makes all characters uppercase
+allLower() - makes all characters lowercase
 capitalizeWords() - makes the first character of each word uppercase
 removeExtraSpaces() - Removes all spaces from the beginning and end of a String along with any extra spaces in the middle. If more than one space appears in the middle of a string it
   is replaced by a single space.
@@ -17,6 +19,12 @@ function capitalize(string) {
   const firstLetter = string.substring(0, 1).toUpperCase()
   const remainingLetters = string.substring(1, string.length)
   return firstLetter.concat(remainingLetters)
+}
+
+function reverseCapitalize(string) {
+  const firstLetter = string.substring(0, 1).toLowerCase()
+  const remainingLetters = string.substring(1, string.length)
+  return firstLetter.concat(remainingLetters.toUpperCase())
 }
 
 function allCaps(string) {
@@ -79,13 +87,30 @@ function kabobCase(string) {
 
 function snakeCase(string) {
   let lowerString = allLower(string)
-  // Todo: remove extra spaces
+  // TODO: remove extra spaces
   const retArray = lowerString.split(" ")
   return retArray.join("_")
 }
 
+function camelCase(string) {
+  const splitArray = string.split(" ")
+  // TODO: remove extra spaces
+  let retArray = splitArray.map(word => {
+    if (word == splitArray[0]) {
+      return allLower(word)
+    } else {
+      return capitalize(word)
+    }
+  })
+  return retArray.join("")
+}
+
+// TODO: urlEncoding
+
 console.log("capitalize():")
 console.log(capitalize("hello world"))
+console.log("reverseCapitalize():")
+console.log(reverseCapitalize("hello world"))
 console.log("allCaps():")
 console.log(allCaps("hello world"))
 console.log("allLower():")
@@ -97,4 +122,6 @@ console.log(removeExtraSpaces("  Hello  World  "))
 console.log("kabobCase():")
 console.log(kabobCase("Hello Word"))
 console.log("snakeCase():")
-console.log(snakeCase("Hello Word"))
+console.log(snakeCase("Hello World"))
+console.log("camelCase():")
+console.log(camelCase("Hello World"))
