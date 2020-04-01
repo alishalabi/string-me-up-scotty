@@ -29,6 +29,17 @@ function allCaps(string) {
   return ret
 }
 
+function allLower(string) {
+  let ret = ""
+  const stringSplit = string.split("")
+  for (let index = 0; index < string.length; index++) {
+    letter = stringSplit[index].toLowerCase()
+    // console.log(letter)
+    ret = ret + letter
+  }
+  return ret
+}
+
 function capitalizeWords(string) {
   let retArray = []
   let ret = ""
@@ -40,25 +51,50 @@ function capitalizeWords(string) {
     const formattedWord = firstLetter.concat(remainingLetters)
     retArray.push(formattedWord)
   })
-  const ret = retArray.join(" ")
+  ret = retArray.join(" ")
   return ret
 }
 
 function removeExtraSpaces(string) {
-  let ret = ""
-  const whiteList
+  // const whiteList
   const trimmedString = string.trim()
-  for (let index = 0; index < trimmedString.length - 1; index++) {
-    " " "\n" "\r" "\t"
-  }
+  const words = trimmedString.split(" ")
+  // console.log(words)
+  let retArray = words.map(word => {
+    let trimmedWord = word.trim()
+    if (trimmedWord != " ") {
+      return trimmedWord
+    }
+  })
+  return retArray.join(" ")
   // console.log(trimmedString)
+}
+
+function kabobCase(string) {
+  let lowerString = allLower(string)
+  // Todo: remove extra spaces
+  const retArray = lowerString.split(" ")
+  return retArray.join("-")
+}
+
+function snakeCase(string) {
+  let lowerString = allLower(string)
+  // Todo: remove extra spaces
+  const retArray = lowerString.split(" ")
+  return retArray.join("_")
 }
 
 console.log("capitalize():")
 console.log(capitalize("hello world"))
 console.log("allCaps():")
 console.log(allCaps("hello world"))
+console.log("allLower():")
+console.log(allLower("HELLO WORLD"))
 console.log("capitalizeWords():")
 console.log(capitalizeWords("hello world"))
 console.log("removeExtraSpaces():")
-removeExtraSpaces("  Hello  World  ")
+console.log(removeExtraSpaces("  Hello  World  "))
+console.log("kabobCase():")
+console.log(kabobCase("Hello Word"))
+console.log("snakeCase():")
+console.log(snakeCase("Hello Word"))
