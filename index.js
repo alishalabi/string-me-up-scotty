@@ -53,7 +53,7 @@ function removeExtraSpaces(string) {
   // console.log(words)
   let retArray = words.map(word => {
     let trimmedWord = word.trim()
-    if (trimmedWord != " ") {
+    if (trimmedWord != "") {
       return trimmedWord
     }
   })

@@ -1,0 +1,19 @@
+{
+  "name": "string-me-up-scotty",
+  "version": "1.0.0",
+  "description": "The purpose of this package is to create a series of string methods to assist with string manipulation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alishalabi/string-me-up-scotty.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alishalabi/string-me-up-scotty/issues"
+  },
+  "homepage": "https://github.com/alishalabi/string-me-up-scotty#readme"
+}

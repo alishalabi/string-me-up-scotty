@@ -1,3 +1,5 @@
+![npm](https://img.shields.io/npm/v/string-me-up-scotty)
+
 The purpose of this package is to create a series of string methods to assist with string manipulation.
 
 Available methods:
