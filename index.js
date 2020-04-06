@@ -11,55 +11,32 @@ function reverseCapitalize(string) {
 }
 
 function allCaps(string) {
-  let ret = ""
-  const stringSplit = string.split("")
-  for (let index = 0; index < string.length; index++) {
-    letter = stringSplit[index].toUpperCase()
-    ret = ret + letter
-  }
-  return ret
+  return string.toUpperCase()
 }
 
 function allLower(string) {
   let ret = ""
   const stringSplit = string.split("")
-  for (let index = 0; index < string.length; index++) {
+  for (let index = 0; index < string.length; index += 1) {
     letter = stringSplit[index].toLowerCase()
-    // console.log(letter)
     ret = ret + letter
   }
   return ret
 }
 
 function capitalizeWords(string) {
-  let retArray = []
-  let ret = ""
   const wordArray = string.split(" ")
-  wordArray.forEach(word => {
-    ret = ret + capitalize(word)
-    const firstLetter = word.substring(0, 1).toUpperCase()
-    const remainingLetters = word.substring(1, word.length)
-    const formattedWord = firstLetter.concat(remainingLetters)
-    retArray.push(formattedWord)
+  let retArray = wordArray.map(word => {
+    return capitalize(word)
   })
-  ret = retArray.join(" ")
-  return ret
+  return retArray.join(" ")
 }
 
 function removeExtraSpaces(string) {
-  // const whiteList
   const trimmedString = string.trim()
   const words = trimmedString.split(" ")
-  // console.log(words)
-  // let retArray = words.map(word => {
-  //   let trimmedWord = word.trim()
-  //   if (trimmedWord != "") {
-  //     return trimmedWord
-  //   }
-  // })
-  let retArray = words.filter(word => word != "")
+  let retArray = words.filter(word => word !== "")
   return retArray.join(" ")
-  // console.log(trimmedString)
 }
 
 function kabobCase(string) {
@@ -79,8 +56,7 @@ function snakeCase(string) {
 function camelCase(string) {
   let trimmedString = removeExtraSpaces(string)
   const splitArray = trimmedString.split(" ")
-  // TODO: remove extra spaces
-  let retArray = splitArray.map(word => {
+  const retArray = splitArray.map(word => {
     if (word == splitArray[0]) {
       return allLower(word)
     } else {
@@ -89,6 +65,16 @@ function camelCase(string) {
   })
   return retArray.join("")
 }
+
+module.exports.capitalize = capitalize
+module.exports.reverseCapitalize = reverseCapitalize
+module.exports.allCaps = allCaps
+module.exports.allLower = allLower
+module.exports.capitalizeWords = capitalizeWords
+module.exports.removeExtraSpaces = removeExtraSpaces
+module.exports.kabobCase = kabobCase
+module.exports.snakeCase = snakeCase
+module.exports.camelCase = camelCase
 
 // TODO: urlEncoding
 
