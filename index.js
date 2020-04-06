@@ -66,6 +66,8 @@ function camelCase(string) {
   return retArray.join("")
 }
 
+// TODO: urlEncoding
+
 module.exports.capitalize = capitalize
 module.exports.reverseCapitalize = reverseCapitalize
 module.exports.allCaps = allCaps
@@ -75,24 +77,3 @@ module.exports.removeExtraSpaces = removeExtraSpaces
 module.exports.kabobCase = kabobCase
 module.exports.snakeCase = snakeCase
 module.exports.camelCase = camelCase
-
-// TODO: urlEncoding
-
-console.log("capitalize(hello world):")
-console.log(capitalize("hello world"))
-console.log("reverseCapitalize(hello world):")
-console.log(reverseCapitalize("hello world"))
-console.log("allCaps(hello world):")
-console.log(allCaps("hello world"))
-console.log("allLower(HELLO WORLD):")
-console.log(allLower("HELLO WORLD"))
-console.log("capitalizeWords(hello world):")
-console.log(capitalizeWords("hello world"))
-console.log("removeExtraSpaces(  Hello  World  ):")
-console.log(removeExtraSpaces("  Hello  World  "))
-console.log("kabobCase(Hello  Word ):")
-console.log(kabobCase("Hello  Word "))
-console.log("snakeCase(Hello  Word ):")
-console.log(snakeCase("Hello  Word "))
-console.log("camelCase(Hello     World ):")
-console.log(camelCase("Hello     World "))
