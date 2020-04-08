@@ -1,4 +1,6 @@
 ![npm](https://img.shields.io/npm/v/string-me-up-scotty)
+[![Build Status](https://travis-ci.com/alishalabi/string-me-up-scotty.svg?branch=master)](https://travis-ci.com/alishalabi/string-me-up-scotty)
+[![Coverage Status](https://coveralls.io/repos/github/alishalabi/string-me-up-scotty/badge.svg?branch=master)](https://coveralls.io/github/alishalabi/string-me-up-scotty?branch=master)
 
 The purpose of this package is to create a series of string methods to assist with string manipulation.
 
