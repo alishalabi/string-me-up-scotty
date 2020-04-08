@@ -1,6 +1,6 @@
 {
   "name": "string-me-up-scotty",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "The purpose of this package is to create a series of string methods to assist with string manipulation.",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/alishalabi/string-me-up-scotty#readme",
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
     "jest": "^25.2.7"
   }
 }

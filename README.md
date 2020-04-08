@@ -2,9 +2,10 @@
 
 The purpose of this package is to create a series of string methods to assist with string manipulation.
 
+## Usage
 Available methods:
 - capitalize() - makes the first character of a given string uppercase
-- reverseCapitalize() - makes the first character of a given string lowercase, makes all other letters uppcase
+- reverseCapitalize() - makes the first character of a given string lowercase, makes all other letters uppercase
 - allCaps() - makes all characters uppercase
 - allLower() - makes all characters lowercase
 - capitalizeWords() - makes the first character of each word uppercase
